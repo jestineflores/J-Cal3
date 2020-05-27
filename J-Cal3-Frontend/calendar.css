@@ -58,7 +58,7 @@ body {
 
 .date-picker.selected {
   font-weight: bold;
-  outline: 1px dashed #00BCD4;
+  outline: 1px dashed #ffd300;
 }
 
 .date-picker.selected span {
