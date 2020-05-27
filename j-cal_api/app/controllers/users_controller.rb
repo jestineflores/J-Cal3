@@ -21,6 +21,10 @@ class UsersController < ApplicationController
         render json: @user
     end
 
+    def destroy
+        @user.destroy
+        render json: { message: "You destroyed the user." }
+    end
     
     private
 
