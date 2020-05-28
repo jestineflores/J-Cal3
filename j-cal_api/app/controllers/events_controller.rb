@@ -5,9 +5,9 @@ class EventsController < ApplicationController
     end
 
     def show
-            @event = Event.find(params[:id])
-            render json: @event
-        end
+        @event = Event.find(params[:id])
+        render json: @event
+    end
 
     def create
         @event = Event.create(event_params)
@@ -27,6 +27,6 @@ class EventsController < ApplicationController
     private
 
     def event_params
-        params.require(:event).permit(:event, :location, :start_time, :end_time)
+        params.require(:event).permit(:name, :location, :start_time, :end_time, :user_id)
     end
 end

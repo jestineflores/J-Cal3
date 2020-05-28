@@ -21,10 +21,12 @@ class UsersController < ApplicationController
         render json: @user
     end
 
-    def destroy
-        @user.destroy
-        render json: { message: "You destroyed the user." }
-    end
+    # def create_calendar
+    #     if @user.calendar.nil?
+    #         @user.calendar = Calendar.create(:user_id => @user.id)
+    #     end
+    #     @user.calendar
+    # end
     
     private
 

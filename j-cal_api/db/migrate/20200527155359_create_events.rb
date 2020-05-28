@@ -1,11 +1,11 @@
 class CreateEvents < ActiveRecord::Migration[6.0]
   def change
     create_table :events do |t|
-      t.string "event"
+      t.string "name"
       t.string "location"
-      t.datetime "end_time"
-      t.datetime "end_time"
-      t.refrences :calendar, foreign_key: true
+      t.time "start_time"
+      t.time "end_time"
+      t.references :user, null: false, foreign_key: true
     end
   end
 end

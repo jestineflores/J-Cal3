@@ -9,7 +9,7 @@ body {
   /* margin: 0; */
   background: rgb(1, 2, 26);
   font-size: 1em;
-  color: whitesmoke
+  color: #16dbf5
 }
 
 
@@ -44,7 +44,7 @@ body {
 
 .table-calendar td {
   padding: 50px;
-  border: 1px solid #00BCD4;
+  border: 1px solid #ffd300;
   text-align: center;
   vertical-align: top;
 }
@@ -67,12 +67,12 @@ body {
 
 /* sunday */
 .date-picker:nth-child(1) {
-color: red;
+color: #22e4fd
 }
 
 /* friday */
 .date-picker:nth-child(6) {
-color: green;
+color: #22e4fd
 }
 
 #monthAndYear {
@@ -89,7 +89,7 @@ color: green;
   clear: both;
 }
 
-#date {
+/* #date {
   background:#ffd300;
   color: black;
   display: inline-block;
@@ -100,14 +100,16 @@ color: green;
   letter-spacing: 1px;
   margin: 0 0 30px;
   padding: 10px 15px 8px
-}
+} */
 
 #previous {
   float: left;
+  border-radius: 24px;;
 }
 
 #next {
   float: right;
+  border-radius: 24px;;
 }
 
 .footer-container-calendar {
@@ -123,6 +125,44 @@ color: green;
   background: #ffffff;
   color: #585858;
   border: 1px solid #bfc5c5;
-  border-radius: 3px;
+  border-radius: 24px;
   padding: 5px 1em;
+}
+
+
+.new-event-form {
+  color: white;
+  font-family: 'Lucida Sans', Arial, sans-serif;
+  position: center;
+  height: 70vh;
+  /* width: 50vw; */
+  z-index: 200; /* arbitrarily high value */
+  display: flex;
+  flex-direction: column;
+  margin: 10vh 25vw 10vh 25vw;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: 2px solid #ffd300;
+  border-radius: 24px;
+}
+
+#date {
+  background:#ffd300;
+  color: black;
+  display: inline-block;
+  border-radius:24px;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 12px;
+  letter-spacing: 1px;
+  margin: 0 0 30px;
+  padding: 10px 15px 8px
+}
+
+.submit {
+  border-radius: 50px;;
 }
