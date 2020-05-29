@@ -45,32 +45,39 @@ monthAndYear = document.getElementById("monthAndYear");
 
 showCalendar(currentMonth, currentYear);
 
+
 const eventName = document.querySelector('#name');
 const eventLocation = document.querySelector('#location');
 const eventStartTime = document.querySelector('#start_time');
 const eventEndTime = document.querySelector('#end_time');
+const eventId = document.querySelector('#id');
 
-const eventURL = 'http://localhost:3000/events';
 
-fetch(eventURL)
+fetch('http://localhost:3000/events')
     .then(response => response.json())
-    .then(result => displayEvents(result))
+    .then(result => displayEvents(result)) 
+
+        // showCalendar(currentMonth, currentYear);
 
 function displayEvents(events) {
-    events.forEach(event => {
-        displayEvent(event)
+    events.forEach(event => { {displayEvent(event)}
     })
 }
 
-function displayEvent(event) {
-    const div = document.createElement('div')
-    const h1 = document.createElement('h1')
-    const p = document.createElement('p')
-    h1.innerText = event.name
-    p.innerText = event.location
-    div.append(h1, p)
-    document.body.append(div)
-  }
+function displayEvent(event){
+      // let startTime = new Date(`${event.start_time}`);
+      // startTime.toDateString('start_time');
+      const h2 = document.createElement('h2');
+      h2.innerText = event.name;
+      const h3 = document.createElement("h3")
+      h3.innerHTML = "Location: " + event.location + " | " + "Your Event Starts at: " + event.start_time + " | " + "& Ends: " + event.end_time
+      document.body.append(h2, h3);
+      alert("Event Created!");
+}
+
+
+
+
 
 const newEventForm = document.querySelector('#new-event-form')
 newEventForm.addEventListener('submit', (event) => {
@@ -80,30 +87,32 @@ newEventForm.addEventListener('submit', (event) => {
   const newEventLocation = formData.get('location');
   const newEventStartTime = formData.get('start_time');
   const newEventEndTime = formData.get('end_time');
+  const newEventId = formData.get('id');
   const newEvent = {
     event: {
       name: newEventName,
       location: newEventLocation,
       start_time: newEventStartTime,
-      end_time: newEventEndTime
-    },
-  };
+      end_time: newEventEndTime,
+      id: newEventId
+    }}
 
-  saveEventToDatabase(newEvent)
-  newEventForm.reset();
+    saveEventToDatabase(newEvent)
+    newEventForm.reset();
 });
 
- const saveEventToDatabase = (newEvent) => {
+
+const saveEventToDatabase = (event) => {
   fetch('http://localhost:3000/events', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
       },
-      body: JSON.stringify(newEvent),
-  }).then((response) => response.json())
-    .then(console.log);
-}
+      body: JSON.stringify(event),
+    }).then((response) => response.json())
+      .then((result) => displayEvent(result));
+  }
 
 function next() {
   currentYear = (currentMonth === 11) ? currentYear + 1 : currentYear;

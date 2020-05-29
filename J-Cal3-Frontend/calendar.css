@@ -8,7 +8,7 @@ html {
 body {
   /* margin: 0; */
   background: rgb(1, 2, 26);
-  font-size: 1em;
+  font-size: 2em;
   color: #16dbf5
 }
 
@@ -44,7 +44,8 @@ body {
 
 .table-calendar td {
   padding: 50px;
-  border: 1px solid #ffd300;
+  border: 2px solid #ffd300;
+  border-radius: 20px;
   text-align: center;
   vertical-align: top;
 }
@@ -79,6 +80,7 @@ color: #22e4fd
   text-align: center;
   margin-top: 0;
   font-size: 46px;
+  
 
 }
 
@@ -89,27 +91,35 @@ color: #22e4fd
   clear: both;
 }
 
-/* #date {
-  background:#ffd300;
-  color: black;
-  display: inline-block;
-  font-family: 'Lato', sans-serif;
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 12px;
-  letter-spacing: 1px;
-  margin: 0 0 30px;
-  padding: 10px 15px 8px
-} */
-
 #previous {
+  font-size: 14px;
+  background: #ffd300;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
   float: left;
-  border-radius: 24px;;
+  border: 2px solid #22e4fd;
+  padding: 14px 40px;
+  outline: none;
+  color: black;
+  border-radius: 24px;
+  transition: 0.25s;
 }
 
 #next {
+  font-size: 14px;
+  background: #ffd300;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
   float: right;
-  border-radius: 24px;;
+  border: 2px solid #22e4fd;
+  padding: 14px 40px;
+  outline: none;
+  color: black;
+  border-radius: 24px;
+  transition: 0.25s;
+  display: block;
 }
 
 .footer-container-calendar {
@@ -124,9 +134,17 @@ color: #22e4fd
   zoom: 1;
   background: #ffffff;
   color: #585858;
-  border: 1px solid #bfc5c5;
+  /* border: 1px solid #bfc5c5; */
   border-radius: 24px;
   padding: 5px 1em;
+  background: #ffd300;
+  margin: 15px auto;
+  text-align: center;
+  border: 2px solid #22e4fd;
+  /* padding: 5px 15px; */
+  color: black;
+  border-radius: 24px;
+  transition: 0.25s;
 }
 
 
@@ -153,16 +171,106 @@ color: #22e4fd
   background:#ffd300;
   color: black;
   display: inline-block;
-  border-radius:24px;
+  border-radius:20px;
   font-family: 'Lato', sans-serif;
-  font-size: 12px;
+  font-size: 14px;
+  text-align: center;
   font-weight: bold;
   line-height: 12px;
   letter-spacing: 1px;
   margin: 0 0 30px;
-  padding: 10px 15px 8px
+  padding: 15px 20px 10px;
+  border: 2px solid #22e4fd;
 }
 
 .submit {
-  border-radius: 50px;;
+  border-radius: 10px;
+  border: 0;
+  background: whitesmoke;;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #22e4fd;
+  padding: 10px 20px;
+  outline: none;
+  color: black;
+  border-radius: 24px;
+  transition: 0.25s;
+  display: block;
+}
+
+.name {
+  border-radius: 10px;;
+  border: 0;
+  background: whitesmoke;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #22e4fd;
+  padding: 10px 20px;
+  outline: none;
+  color: black;
+  border-radius: 24px;
+  transition: 0.25s;
+  display: block;
+}
+
+.location {
+  border-radius: 10px;;
+  border: 0;
+  background: whitesmoke;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  border: 2px solid #22e4fd;
+  padding: 10px 20px;
+  outline: none;
+  color: black;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.start_time {
+  border-radius: 10px;;
+  border: 0;
+  background: whitesmoke;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #22e4fd;
+  padding: 10px 20px;
+  outline: none;
+  color: black;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.end_time {
+  border-radius: 10px;
+  border-radius: 10px;;
+  border: 0;
+  background: whitesmoke;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #22e4fd;
+  padding: 10px 20px;
+  outline: none;
+  color: black;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+
+.id{
+  border-radius: 10px;;
+  border: 0;
+  background: whitesmoke;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #22e4fd;
+  padding: 10px 20px;
+  outline: none;
+  color: black;
+  border-radius: 24px;
+  transition: 0.25s;
 }

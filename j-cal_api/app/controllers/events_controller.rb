@@ -11,23 +11,22 @@ class EventsController < ApplicationController
 
     def create
         @event = Event.create(event_params)
-        @event.id
         render json: @event
     end
 
-    def update
-        @event.update(event_params)
-        render json: @user
-    end
+    # def update
+    #     @event.update(event_params)
+    #     render json: @event
+    # end
 
-    def destroy
-        @event.destroy
-        render json: { message: "You destroyed the event." }
-    end
+    # def destroy
+    #     @event.destroy
+    #     render json: { message: "You destroyed the event." }
+    # end
 
     private
 
     def event_params
-        params.permit(:name, :location, :start_time, :end_time)
+        params.require(:event).permit(:name, :location, :start_time, :end_time, :id)
     end
 end
