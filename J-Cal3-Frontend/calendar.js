@@ -18,7 +18,7 @@ let y = today.getFullYear();
 let m = today.getMonth() + 1;
 let d = today.getDate();
 
-document.getElementById("date").innerHTML =  m + "/" + d + "/" + y;
+document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
 
 let createYear = generate_year_range(1970, 2050);
 /** or if we wanted to limit new event creation to this year only
@@ -103,6 +103,22 @@ const eventEndTime = document.querySelector('#end_time');
 
 const newEventForm = document.querySelector('#new-event-form')
 
+fetch('http://localhost:3000/login' {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+    .then(parseJson)
+    .then(response => {
+        const { token } = response
+        localStorage.setItem('token', token)
+    })
+
+function logout() {
+    localStorage.removeItem("token")
+}
+
 fetch('http://localhost:3000/events')
     .then(response => response.json())
     .then(result => displayEvents(result))
@@ -110,8 +126,8 @@ fetch('http://localhost:3000/events')
 // showCalendar(currentMonth, currentYear);
 
 function displayEvents(events) {
-  console.log("displayEvents is Being Called on line 113")
-  console.log(events);
+    console.log("displayEvents is Being Called on line 113")
+    console.log(events);
     events.forEach(event => {
         { displayEvent(event) }
     })
@@ -151,7 +167,8 @@ const saveEventToDatabase = (event) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                'Accept': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
             },
             body: JSON.stringify(event)
         })

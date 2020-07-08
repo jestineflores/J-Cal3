@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+    before_action :authenticate, only: [:create]
     def index
         @events = Event.all
         render json: @events
@@ -11,7 +12,7 @@ class EventsController < ApplicationController
 
     def create
         @event = Event.create!(event_params)
-        render json: Event.all
+        render json: { event: @event}, status: :created
     end
 
     # def update

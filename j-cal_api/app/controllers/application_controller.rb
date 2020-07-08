@@ -3,8 +3,9 @@ class ApplicationController < ActionController::API
         begin
             authorization_header = request.headers["Authorization"]
             token = authorization_header.split(" ")[1]
-            secret = Rails.application.secrets.secret_key_base
-            decoded_token = JWT.decode(token, secret)
+            secret = Rails.application.secret_key_base
+            payload = JWT.decode(token, secret)[0]
+            @user =User.find(payload["user_id"])
         rescue
             render json: { error: "Invalid!" }
         end
