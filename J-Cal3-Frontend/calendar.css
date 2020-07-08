@@ -1,17 +1,16 @@
 html {
-  font-family: sans-serif;
-  font-size: 15px;
-  line-height: 1.4;
-  color: whitesmoke;
+    font-family: sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    color: whitesmoke;
 }
 
 body {
-  /* margin: 0; */
-  background: rgb(1, 2, 26);
-  font-size: 2em;
-  color: #16dbf5
+    /* margin: 0; */
+    background: rgb(1, 2, 26);
+    font-size: 2em;
+    color: #16dbf5
 }
-
 
 
 /* .wrapper {
@@ -19,258 +18,264 @@ body {
   max-width: 1100px; */
 
 .container-calendar {
-  background: rgb(1, 2, 26);
-  padding: 15px;
-  max-width: 1000px;
-  margin: 0 auto;
-  overflow: auto;
+    background: rgb(1, 2, 26);
+    padding: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: auto;
 }
 
 .button-container-calendar button {
-  cursor: pointer;
-  display: inline-block;
-  zoom: 1;
-  background: #ffd300;
-  color: black;
-  border: 2px solid #0aa2b5;
-  border-radius: 4px;
-  padding: 5px 10px;
+    cursor: pointer;
+    display: inline-block;
+    zoom: 1;
+    background: #ffd300;
+    color: black;
+    border: 2px solid #0aa2b5;
+    border-radius: 4px;
+    padding: 5px 10px;
 }
 
 .table-calendar {
-  border-collapse: collapse;
-  width: 100%;
+    border-collapse: collapse;
+    width: 100%;
 }
 
 .table-calendar td {
-  padding: 50px;
-  border: 2px solid #ffd300;
-  border-radius: 20px;
-  text-align: center;
-  vertical-align: top;
+    padding: 50px;
+    border: 2px solid #ffd300;
+    border-radius: 20px;
+    text-align: center;
+    vertical-align: top;
 }
 
 .table-calendar th {
-  padding: 50px;
-  /* border: 1px solid #00BCD4; */
-  text-align: center;
-  vertical-align: top;
+    padding: 50px;
+    /* border: 1px solid #00BCD4; */
+    text-align: center;
+    vertical-align: top;
 }
 
 .date-picker.selected {
-  font-weight: bold;
-  outline: 1px dashed #ffd300;
+    font-weight: bold;
+    outline: 1px dashed #ffd300;
 }
 
 .date-picker.selected span {
-  border-bottom: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
 }
+
 
 /* sunday */
+
 .date-picker:nth-child(1) {
-color: #22e4fd
+    color: #22e4fd
 }
 
+
 /* friday */
+
 .date-picker:nth-child(6) {
-color: #22e4fd
+    color: #22e4fd
 }
 
 #monthAndYear {
-  text-align: center;
-  margin-top: 0;
-  font-size: 46px;
-  
-
+    text-align: center;
+    margin-top: 0;
+    font-size: 46px;
 }
 
 .button-container-calendar {
-  position: relative;
-  margin-bottom: 1em;
-  overflow: hidden;
-  clear: both;
+    position: relative;
+    margin-bottom: 1em;
+    overflow: hidden;
+    clear: both;
 }
 
 #previous {
-  font-size: 14px;
-  background: #ffd300;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  float: left;
-  border: 2px solid #22e4fd;
-  padding: 14px 40px;
-  outline: none;
-  color: black;
-  border-radius: 24px;
-  transition: 0.25s;
+    font-size: 14px;
+    background: #ffd300;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    float: left;
+    border: 2px solid #22e4fd;
+    padding: 14px 40px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
 }
 
 #next {
-  font-size: 14px;
-  background: #ffd300;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  float: right;
-  border: 2px solid #22e4fd;
-  padding: 14px 40px;
-  outline: none;
-  color: black;
-  border-radius: 24px;
-  transition: 0.25s;
-  display: block;
+    font-size: 14px;
+    background: #ffd300;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    float: right;
+    border: 2px solid #22e4fd;
+    padding: 14px 40px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+    display: block;
 }
 
 .footer-container-calendar {
-  margin-top: 1em;
-  border-top: 1px solid #dadada;
-  padding: 10px 0;
+    margin-top: 1em;
+    border-top: 1px solid #dadada;
+    padding: 10px 0;
 }
 
 .footer-container-calendar select {
-  cursor: pointer;
-  display: inline-block;
-  zoom: 1;
-  background: #ffffff;
-  color: #585858;
-  /* border: 1px solid #bfc5c5; */
-  border-radius: 24px;
-  padding: 5px 1em;
-  background: #ffd300;
-  margin: 15px auto;
-  text-align: center;
-  border: 2px solid #22e4fd;
-  /* padding: 5px 15px; */
-  color: black;
-  border-radius: 24px;
-  transition: 0.25s;
+    cursor: pointer;
+    display: inline-block;
+    zoom: 1;
+    background: #ffffff;
+    color: #585858;
+    /* border: 1px solid #bfc5c5; */
+    border-radius: 24px;
+    padding: 5px 1em;
+    background: #ffd300;
+    margin: 15px auto;
+    text-align: center;
+    border: 2px solid #22e4fd;
+    /* padding: 5px 15px; */
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
 }
 
-
-.new-event-form {
-  color: white;
-  font-family: 'Lucida Sans', Arial, sans-serif;
-  position: center;
-  height: 70vh;
-  /* width: 50vw; */
-  z-index: 200; /* arbitrarily high value */
-  display: flex;
-  flex-direction: column;
-  margin: 10vh 25vw 10vh 25vw;
-  background: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  border: 2px solid #ffd300;
-  border-radius: 24px;
+#new-event-form {
+    color: white;
+    font-family: 'Lucida Sans', Arial, sans-serif;
+    position: center;
+    height: 70vh;
+    /* width: 50vw; */
+    z-index: 200;
+    /* arbitrarily high value */
+    display: none;
+    flex-direction: column;
+    margin: 10vh 25vw 10vh 25vw;
+    background: none;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid #ffd300;
+    border-radius: 24px;
 }
 
 #date {
-  background:#ffd300;
-  color: black;
-  display: inline-block;
-  border-radius:20px;
-  font-family: 'Lato', sans-serif;
-  font-size: 14px;
-  text-align: center;
-  font-weight: bold;
-  line-height: 12px;
-  letter-spacing: 1px;
-  margin: 0 0 30px;
-  padding: 15px 20px 10px;
-  border: 2px solid #22e4fd;
+    background: #ffd300;
+    color: black;
+    display: inline-block;
+    border-radius: 20px;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 12px;
+    letter-spacing: 1px;
+    margin: 0 0 30px;
+    padding: 15px 20px 10px;
+    border: 2px solid #22e4fd;
 }
 
 .submit {
-  border-radius: 10px;
-  border: 0;
-  background: whitesmoke;;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #22e4fd;
-  padding: 10px 20px;
-  outline: none;
-  color: black;
-  border-radius: 24px;
-  transition: 0.25s;
-  display: block;
+    border-radius: 10px;
+    border: 0;
+    background: whitesmoke;
+    ;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #22e4fd;
+    padding: 10px 20px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+    display: block;
 }
 
 .name {
-  border-radius: 10px;;
-  border: 0;
-  background: whitesmoke;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #22e4fd;
-  padding: 10px 20px;
-  outline: none;
-  color: black;
-  border-radius: 24px;
-  transition: 0.25s;
-  display: block;
+    border-radius: 10px;
+    ;
+    border: 0;
+    background: whitesmoke;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #22e4fd;
+    padding: 10px 20px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+    display: block;
 }
 
 .location {
-  border-radius: 10px;;
-  border: 0;
-  background: whitesmoke;
-  display: block;
-  margin: 10px auto;
-  text-align: center;
-  border: 2px solid #22e4fd;
-  padding: 10px 20px;
-  outline: none;
-  color: black;
-  border-radius: 24px;
-  transition: 0.25s;
+    border-radius: 10px;
+    ;
+    border: 0;
+    background: whitesmoke;
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    border: 2px solid #22e4fd;
+    padding: 10px 20px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
 }
 
 .start_time {
-  border-radius: 10px;;
-  border: 0;
-  background: whitesmoke;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #22e4fd;
-  padding: 10px 20px;
-  outline: none;
-  color: black;
-  border-radius: 24px;
-  transition: 0.25s;
+    border-radius: 10px;
+    ;
+    border: 0;
+    background: whitesmoke;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #22e4fd;
+    padding: 10px 20px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
 }
 
 .end_time {
-  border-radius: 10px;
-  border-radius: 10px;;
-  border: 0;
-  background: whitesmoke;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #22e4fd;
-  padding: 10px 20px;
-  outline: none;
-  color: black;
-  border-radius: 24px;
-  transition: 0.25s;
+    border-radius: 10px;
+    border-radius: 10px;
+    ;
+    border: 0;
+    background: whitesmoke;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #22e4fd;
+    padding: 10px 20px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
 }
 
-.id{
-  border-radius: 10px;;
-  border: 0;
-  background: whitesmoke;
-  display: block;
-  margin: 20px auto;
-  text-align: center;
-  border: 2px solid #22e4fd;
-  padding: 10px 20px;
-  outline: none;
-  color: black;
-  border-radius: 24px;
-  transition: 0.25s;
+.id {
+    border-radius: 10px;
+    ;
+    border: 0;
+    background: whitesmoke;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #22e4fd;
+    padding: 10px 20px;
+    outline: none;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
 }

@@ -10,8 +10,8 @@ class EventsController < ApplicationController
     end
 
     def create
-        @event = Event.create(event_params)
-        render json: @event
+        @event = Event.create!(event_params)
+        render json: Event.all
     end
 
     # def update
