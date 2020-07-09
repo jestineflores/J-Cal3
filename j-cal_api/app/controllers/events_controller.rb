@@ -1,18 +1,15 @@
 class EventsController < ApplicationController
-    before_action :authenticate, only: [:create]
+    skip_before_action :authenticate, only: [:create]
+    
     def index
-        @events = Event.all
+        @events = Event.where(user_id: @user.id)
         render json: @events
     end
 
-    def show
-        @event = Event.find(params[:id])
-        render json: @event
-    end
 
     def create
-        @event = Event.create!(event_params)
-        render json: { event: @event}, status: :created
+        @event = Event.create(event_params)
+        render json: @event
     end
 
     # def update
@@ -24,10 +21,9 @@ class EventsController < ApplicationController
     #     @event.destroy
     #     render json: { message: "You destroyed the event." }
     # end
-
     private
 
     def event_params
-        params.require(:event).permit(:name, :location, :start_time, :end_time, :id)
+        params.require(:event).permit(:name, :location, :start_time, :end_time).merge(user_id: @user.id)
     end
 end
