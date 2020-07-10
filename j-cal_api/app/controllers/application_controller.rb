@@ -24,11 +24,8 @@ class ApplicationController < ActionController::API
                 render json: { error: "Invalid!" }, status: :forbidden
             end
         else
-            render json: { error: "Invalid" }, status :forbidden
+            render json: { error: "Invalid" }, status: :forbidden
         end
     end
 
-    def current_user
-    
-    end
 end

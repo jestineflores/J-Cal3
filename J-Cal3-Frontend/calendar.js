@@ -1,16 +1,13 @@
 const loginButton = document.querySelector('.login')
 const loginForm = document.querySelector(".login-form")
-const getEvents = document.querySelector(".get-events")
-
 let isLogggedIn = false;
 
 const authHeaders = {
     "Content-Type": "application/json",
     "Authorization": `Bearer ${localStorage.getItem('token')}`
 }
-loginForm.addEventListener("submit", login);
-getEvents.addEventListener("click", handleGetEvents);
 
+loginForm.addEventListener("submit", login);
 document.addEventListener('DOMContentLoaded', handleGetEvents)
 
 
@@ -22,17 +19,17 @@ function login(event) {
     const password = loginFormData.get("password");
 
     const loginBody = { username, password }
-
     fetch("http://localhost:3000/login", {
             method: "POST",
             headers: {
-                "Content-Type:": "application/json"
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(loginBody)
         }).then(response => response.json())
         .then(result => {
             localStorage.setItem("token", result.token);
             isLogggedIn = true;
+            console.log(result)
         })
     event.target.reset();
 }
@@ -155,25 +152,11 @@ const eventEndTime = document.querySelector('#end_time');
 
 const newEventForm = document.querySelector('#new-event-form')
 
-fetch('http://localhost:3000/login', {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-    })
-    .then(response => response.json())
-    .then(response => {
-        const { token } = response
-        localStorage.setItem('token', token)
-    })
 
-function logout() {
-    localStorage.removeItem("token")
-}
+// function logout() {
+//     localStorage.removeItem("token")
+// }
 
-fetch('http://localhost:3000/events')
-    .then(response => response.json())
-    .then(result => displayEvents(result))
 
 // showCalendar(currentMonth, currentYear);
 
