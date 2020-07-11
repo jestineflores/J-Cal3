@@ -12,8 +12,8 @@ class UsersController < ApplicationController
             password: params[:password],
         )
 
-        payload = { user_id: @user.id }
-        token = create_token(payload)
+        payload = { user_id: @user.id }
+        token = JWT.encode(payload, secret)
 
         render json: {
             user: @user.username,

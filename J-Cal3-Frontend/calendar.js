@@ -1,5 +1,7 @@
 const loginButton = document.querySelector('.login')
 const loginForm = document.querySelector(".login-form")
+const signupForm = document.querySelector(".signup-form")
+
 let isLogggedIn = false;
 
 const authHeaders = {
@@ -8,6 +10,7 @@ const authHeaders = {
 }
 
 loginForm.addEventListener("submit", login);
+signupForm.addEventListener('submit', signup)
 document.addEventListener('DOMContentLoaded', handleGetEvents)
 
 
@@ -30,8 +33,31 @@ function login(event) {
             localStorage.setItem("token", result.token);
             isLogggedIn = true;
             console.log(result)
-        })
-    event.target.reset();
+            
+        }).then(loginForm.style.display = "none")
+        alert("You are logged in !")
+        
+    // event.target.reset();
+}
+
+function signup(event){
+    event.preventDefault()
+    const signupFormData = new FormData(event.target);
+    const username = signupFormData.get("username");
+    const password = signupFormData.get("password");
+
+    const signupBody = { username, password }
+
+    fetch('http://localhost:3000/users', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(signupBody)
+    })
+    .then(response => response.json())
+    .then(result => console.log(result))
+    .then(signupForm.style.display = "none")
 }
 
 function handleGetEvents() {
@@ -160,24 +186,24 @@ const newEventForm = document.querySelector('#new-event-form')
 
 // showCalendar(currentMonth, currentYear);
 
-function displayEvents(events) {
-    console.log("displayEvents is Being Called on line 113")
-    console.log(events);
-    events.forEach(event => {
-        { displayEvent(event) }
-    })
-}
+// function displayEvents(events) {
+//     console.log("displayEvents is Being Called on line 113")
+//     console.log(events);
+//     events.forEach(event => {
+//         { displayEvent(event) }
+//     })
+// }
 
-function displayEvent(event) {
-    // let startTime = new Date(`${event.start_time}`);
-    // startTime.toDateString('start_time');
-    const h2 = document.createElement('h2');
-    h2.innerText = event.name;
-    const h3 = document.createElement("h3")
-    h3.innerHTML = "Location: " + event.location + " | " + "Your Event Starts at: " + event.start_time + " | " + "& Ends: " + event.end_time
-    document.body.append(h2, h3);
-    alert("Event Created!");
-}
+// function displayEvent(event) {
+//     // let startTime = new Date(`${event.start_time}`);
+//     // startTime.toDateString('start_time');
+//     const h2 = document.createElement('h2');
+//     h2.innerText = event.name;
+//     const h3 = document.createElement("h3")
+//     h3.innerHTML = "Location: " + event.location + " | " + "Your Event Starts at: " + event.start_time + " | " + "& Ends: " + event.end_time
+//     document.body.append(h2, h3);
+//     alert("Event Created!");
+// }
 
 function displayEventForm(event, month, year) {
     event.preventDefault(); // otherwise page refreshes
@@ -197,19 +223,7 @@ function displayEventForm(event, month, year) {
 }
 
 
-const saveEventToDatabase = (event) => {
-    fetch('http://localhost:3000/events', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'Authorization': `Bearer ${localStorage.getItem('token')}`
-            },
-            body: JSON.stringify(event)
-        })
-        .then((response) => response.json())
-        .then(e => console.log(e));
-}
+
 
 
 
@@ -253,6 +267,34 @@ document.getElementById("create_new_event").onclick = (e) => {
     saveEventToDatabase(newEvent)
     newEventForm.reset();
     newEventForm.style.display = "none";
+}
+
+const saveEventToDatabase = (newEvent) => {
+    fetch('http://localhost:3000/events', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`
+            },
+            body: JSON.stringify(newEvent)
+        })
+        .then(response => response.json())
+        .then(response => appendEvent(response))
+
+        }
+
+function appendEvent(event) {
+    const h2 = document.createElement('h2');
+    h2.innerText = event.name;
+    const h3 = document.createElement("h3")
+    h3.innerHTML = "Location: " + event.location + " | " + "Your Event Starts at: " + event.start_time + " | " + "& Ends: " + event.end_time
+    const dateP = document.querySelector(".date-picker.selected")
+    dateP.append(h2, h3);
+  
+    console.log(dateP)
+    alert("Event Created!");
+    
 }
 
 function daysInMonth(iMonth, iYear) {
