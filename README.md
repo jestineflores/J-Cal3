@@ -1,7 +1,10 @@
 # J-Cal3
 ## Modern Calendar Webapp
 ### Backend
-1.) Run bundle install in the api
+1.) Run 
+```
+bundle install
+```
 
 2.) Run 
 ```
